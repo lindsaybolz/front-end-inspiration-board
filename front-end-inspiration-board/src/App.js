@@ -8,25 +8,50 @@ import Card from './components/Card'
 import CardList from './components/CardList'
 import NewCardForm from './components/NewCardForm'
 
+
+const boardData = [
+  {
+    board_id: 1, 
+    owner: "Winslow", 
+    title: "My Favortie Mushrooms"
+  }, 
+  {
+    board_id: 2, 
+    owner: "Stacey", 
+    title: "Learning about local mushrooms"
+  }, 
+  {
+    board_id: 3, 
+    owner: "Mikelle", 
+    title: "Mushroom Manicures"
+  }
+]
+
 function App() {
-  const [boards, setBoards] = React.useState([])
+  const [boards, setBoards] = React.useState(boardData);
+
+  // const toggleLike = (id) => {
+  //   setBoards(prevBoards => {
+  //     const updatedBoards = prevBoards.map(board => {
+  //       return board.id===id ? {...board, liked: !board.liked} : entry
+  //     })
+  //     return updatedBoards;
+  //   })
+  // };
+
   const [cards, setCards] = React.useState([])
 
   return (
     <main className='App'>
       <h1>Inspiration Board</h1>
       <BoardList
-        board_id={board_id}
-        owner={owner}
-        title={title}
+        boards={boards}
       />
       <NewBoardForm addBoardCallback={addBoard} />
       <Board />
       <NewCardForm addCardCallback={addCard} />
       <CardList
-        card_id={card_id}
-        likes_count={likes_count}
-        message={message}
+        cards={cards}
       />
       <Card />
     </main>
