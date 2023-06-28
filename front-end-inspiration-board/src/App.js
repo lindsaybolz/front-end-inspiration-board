@@ -47,9 +47,9 @@ function App() {
       <BoardList
         boards={boards}
       />
-      <NewBoardForm addBoardCallback={addBoard} />
+      {/* <NewBoardForm addBoardCallback={addBoard} /> */}
       <Board />
-      <NewCardForm addCardCallback={addCard} />
+      {/* <NewCardForm addCardCallback={addCard} /> */}
       <CardList
         cards={cards}
       />

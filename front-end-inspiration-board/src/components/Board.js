@@ -8,7 +8,8 @@ const Board = ({ board_id, owner, title }) => {
             <select
             id={board_id}
             options={title}
-            onChange={handleChange}>
+            // onChange={handleChange}
+            >
             </select>
         </div>
     )
