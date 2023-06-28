@@ -1,7 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import axios from 'axios';
 
 function App() {
+  const [boards, setBoards] = React.useState([])
+  const [cards, setCards] = React.useState([])
+
   return (
     <main className='App'>
       <h1>Inspiration Board</h1>
