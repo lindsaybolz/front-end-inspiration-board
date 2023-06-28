@@ -1,3 +1,4 @@
+import './Card.css';
 import React from 'react';
 import PropTypes from 'prop-types';
 

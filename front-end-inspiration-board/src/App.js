@@ -1,6 +1,12 @@
 import './App.css';
 import React from 'react';
 import axios from 'axios';
+import Board from './components/Board'
+import BoardList from './components/BoardList'
+import NewBoardForm from './components/NewBoardForm';
+import Card from './components/Card'
+import CardList from './components/CardList'
+import NewCardForm from './components/NewCardForm'
 
 function App() {
   const [boards, setBoards] = React.useState([])
@@ -14,7 +20,7 @@ function App() {
         owner={owner}
         title={title}
       />
-      <BoardForm addBoardCallback={addBoard} />
+      <NewBoardForm addBoardCallback={addBoard} />
       <Board />
       <NewCardForm addCardCallback={addCard} />
       <CardList
