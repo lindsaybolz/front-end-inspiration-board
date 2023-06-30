@@ -1,11 +1,11 @@
 import './App.css';
 import React from 'react';
 import axios from 'axios';
-import Board from './components/Board'
-import BoardList from './components/BoardList'
+import Board from './components/Board';
+import BoardList from './components/BoardList';
 import NewBoardForm from './components/NewBoardForm';
-import Card from './components/Card'
-import CardList from './components/CardList'
+import Card from './components/Card';
+import CardList from './components/CardList';
 import NewCardForm from './components/NewCardForm'
 
 
@@ -45,10 +45,10 @@ function App() {
     axios
       .post(`http://localhost:5000/boards`, newBoardData)
       .then((response) => {
-        const newBoards = [...Boards];
+        const newBoards = [...Board];
 
         newBoards.push({
-          id: response.data.id,
+          board_id: response.data.id,
           owner: response.data.owner,
           title: response.data.title,
         });
@@ -59,6 +59,18 @@ function App() {
         console.log(error);
       });
   };
+
+  const [currentBoard, setCurrentBoard] = React.useState()
+
+  // once we code the board selector list so that people can select the board
+  // it will call this changeBoard function with the approproate board_id
+  const changeBoard = (board_id) => {
+    for (Board in boards){
+      if (Board.board_id==board_id) {
+        setCurrentBoard(Board)
+      } 
+  }
+};
 
   return (
     <main className='App'>
