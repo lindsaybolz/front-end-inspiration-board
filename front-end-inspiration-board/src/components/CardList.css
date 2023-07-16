@@ -1,0 +1,11 @@
+.card-list {
+    position: relative;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.empty {
+    display: none;
+}

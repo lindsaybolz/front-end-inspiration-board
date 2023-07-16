@@ -1,0 +1,93 @@
+.error {
+    color: hsl(0, 0%, 34%);
+    border: 2px solid;
+    border-color: rgb(252, 129, 20);
+    border-radius: 15px;
+    border-width: 4px;
+    background-color: #fdc89a;
+    padding: .5em;
+    display: flex;
+    margin: 10px;
+}
+h3 {
+    margin-right: 1em;
+}
+
+.no-error {
+    display: none;
+}
+
+.new_board_form {
+    position: relative;
+    color: rgb(165, 121, 0);
+}
+
+.new_board_fields {
+    background-color: rgb(249, 255, 186);
+    margin: 5px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    border: solid 5px;
+    border-radius: 10px;
+    border-color: rgb(255, 242, 0);
+}
+
+.new-board-h2 {
+    color: rgb(255, 242, 0);
+}
+
+.owner-input, .title-input {
+    font-size: 1.25em;
+    font-weight: bold;
+    font-family:  Chancery L, cursive;
+    align-self: center;
+}
+
+.new_board_submit, .owner-input-bank, .title-input-bank {
+    color: rgb(165, 121, 0);
+    font-family:  Chancery L, cursive;
+    font-weight: bold;
+    border: solid;
+    border-radius: 5px;
+    border-color: rgb(165, 121, 0);
+    background-color: rgb(249, 255, 186);
+}
+
+.owner-input-bank:hover, .title-input-bank:hover {
+    border-width: 5px;
+}
+
+.owner-input-bank:focus, .title-input-bank:focus {
+    border-width: 5px;
+    border-color: rgb(165, 121, 0);
+    outline: none;
+}
+
+.new_board_submit:hover {
+    opacity: .8;
+    background-color: rgb(239, 248, 143);
+    border: 8px, solid;
+    border-width: 5px;
+}
+
+.hidden {
+    display: none;
+}
+
+.new-board-header {
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+    /* border: solid; */
+    /* grid-row: 5fr 1fr; */
+}
+
+.toggle-hidden-button {
+    position: relative;
+    font-size: 2em;
+    /* border: solid; */
+    /* align-items: center; */
+    grid-column-start: col-start 6;
+    /* display: grid; */
+    /* justify-content: center; */
+}

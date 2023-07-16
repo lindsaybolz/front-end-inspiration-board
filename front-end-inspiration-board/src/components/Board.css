@@ -1,0 +1,53 @@
+.board {
+    background-color: rgb(229, 190, 255);
+    margin: 5px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    border: solid 5px;
+    border-radius: 10px;
+    border-color: rgb(83, 45, 118);
+}
+
+.board:hover {
+    opacity: .9;
+    background-color: rgb(240, 163, 254);
+}
+
+.title {
+    padding-top: 0;
+    font-size: 1.5em;
+    font-weight: bold;
+    font-family:  Chancery L, cursive;
+    color: rgb(64, 17, 97);
+    align-self: center;
+
+}
+
+.owner {
+    align-self: flex-end;
+    padding-right: 10px;
+    color: rgb(64, 17, 97);
+    font-family:  Chancery L, cursive;
+}
+
+.board-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+    /* border: solid; */
+    /* align-items: flex-end; */
+}
+
+.board-mushroom-button {
+    align-self: flex-end;
+}
+
+.minimized-title {
+    font-family:  Chancery L, cursive;
+    color: rgb(64, 17, 97);
+}
+
+.minimized {
+    display: none;
+}

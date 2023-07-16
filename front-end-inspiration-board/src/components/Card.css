@@ -1,0 +1,59 @@
+.card {
+    background-color: rgb(239, 190, 248);
+    /* border: solid; */
+    margin: 5px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    border: solid 5px;
+    border-radius: 10px;
+    border-color: rgb(83, 45, 118);
+}
+
+.message {
+    padding-top: 0;
+    font-size: 1.5em;
+    font-weight: bold;
+    font-family:  Chancery L, cursive;
+    color: rgb(64, 17, 97);
+    align-self: center;
+
+}
+
+.likes {
+    align-self: center;
+    padding-right: 10px;
+    color: rgb(64, 17, 97);
+    font-family:  Chancery L, cursive;
+    /* gap: 5px; */
+}
+
+.add-like-button {
+    border: none;
+    background-color: transparent;
+    font-size: 2em;
+    border-radius: 10px;
+    opacity: .6;
+    margin: 10px;
+
+}
+
+.add-like-button:hover {
+    opacity: .9;
+    background-color: rgb(255, 255, 233);
+}
+
+.remove-card-button {
+    color: rgb(64, 17, 97);
+    font-family:  Chancery L, cursive;
+    font-weight: bold;
+    border: solid;
+    border-radius: 5px;
+    border-color: rgb(64, 17, 97);
+    background-color: rgb(239, 190, 248);
+}
+
+.remove-card-button:hover {
+    opacity: .7;
+    background-color: rgb(240, 163, 254);
+}

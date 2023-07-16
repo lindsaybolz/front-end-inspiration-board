@@ -1,38 +1,85 @@
-.App {
+/* .App {
+  width:818px;
+  margin:0 auto;
+  height: 100%;
+  justify-content: center;
+  background: url('../public/mushy-background.jpeg');
+  opacity: .75;
+}
+h1 {
+  position: relative;
+  color: black;  
+  line-height: 0.9;
   text-align: center;
-}
+  font-family: Apple Chancery, cursive;
+  color: rgb(64, 17, 97);
+  font-size: 3em;
+} */
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.App {
+  position: relative; 
+  /* height: 100vh; */
+  width: 100%;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: column;
+}
+.App::before {
+  content: "";
+  background: url('../public/mushy-background.jpeg');
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.75;
 }
 
-.App-link {
-  color: #61dafb;
+h1 {
+  position: relative;
+  color: rgb(64, 17, 97);
+  line-height: 0.9;
+  text-align: center;
+  font-family: Apple Chancery, cursive;
+  font-size: 4em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h2 {
+  position: relative;
+  color: rgb(64, 17, 97);
+  line-height: 0.9;
+  text-align: center;
+  font-family: cursive;
+  font-size: 2.5em;
+  font-weight: bold;
 }
+
+/* body {
+  background:#E0E4CC;
+  background-image: url("../public/mushy-background.jpeg");
+  background-repeat:repeat-x;
+  margin:0;
+  padding:0;
+  height: 100%;
+  opacity: .75;
+}
+
+.App {
+    width:818px;
+    margin:0 auto;
+    height: 100%;
+    justify-content: center;
+}
+
+h1 {
+  position: relative;
+  color: black;  
+  line-height: 0.9;
+  text-align: center;
+  font-family: Apple Chancery, cursive;
+  color: rgb(64, 17, 97);
+  font-size: 3em;
+}  */
