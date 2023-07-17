@@ -117,8 +117,6 @@ function App() {
       setCurrentBoard(id)
       setCards(response.data);
     });
-    console.log(currentBoard)
-    console.log(cards)
   };
 
   return (
