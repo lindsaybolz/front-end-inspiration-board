@@ -10,17 +10,17 @@ import NewCardForm from './components/NewCardForm'
 
 const boardData = [
   {
-    board_id: 1, 
+    id: 1, 
     owner: "Winslow", 
     title: "My Favortie Mushrooms"
   }, 
   {
-    board_id: 2, 
+    id: 2, 
     owner: "Stacey", 
     title: "Learning about local mushrooms"
   }, 
   {
-    board_id: 3, 
+    id: 3, 
     owner: "Mikelle", 
     title: "Mushroom Manicures"
   }
@@ -46,10 +46,15 @@ function App() {
     axios
       .post(`https://m-cubed-api.onrender.com/boards`, newBoardData)
       .then((response) => {
-        axios.get(`https://m-cubed-api.onrender.com/boards`)
-        .then(response =>{
-          setBoards(response.data);
-        });
+
+        const newBoards = [...boards];
+        const nextId = Math.max(...newBoards.map(board=>board.id)) + 1;
+        newBoards.push({
+          id: nextId,
+          owner: newBoardData.owner,
+          title: newBoardData.title,
+        })
+        setBoards(newBoards);
       })
       .catch((error) => {
         console.log(error);
@@ -60,11 +65,18 @@ function App() {
     axios
       .post(`https://m-cubed-api.onrender.com/boards/${currentBoard}/cards`, newCardData)
       .then((response) => {
-        axios.get(`https://m-cubed-api.onrender.com/boards/${currentBoard}/cards`)
-        .then(response =>{
-          setCards(response.data);
-        });
+        const newCards = [...cards];
+        const nextId = Math.max(...newCards.map(card=>card.id)) + 1;
+        const board = boards.filter(board => board.id === currentBoard);
+        const boardTitle = board[0].title;
+        newCards.push({
+          id: nextId,
+          likes: 0,
+          message: newCardData.message,
+          board: boardTitle,
         })
+        setCards(newCards);
+      })
       .catch((error) => {
         console.log(error);
       });
@@ -86,10 +98,12 @@ function App() {
   const addLike = (id) => {
     axios.patch(`https://m-cubed-api.onrender.com/cards/${id}`)
     .then( response => {
-      axios.get(`https://m-cubed-api.onrender.com/boards/${currentBoard}/cards`)
-      .then(response =>{
-        setCards(response.data);
-      });
+      setCards(prevCards => {
+        const updatedCards = prevCards.map(card => {
+          return card.id === id ? {...card, likes: card.likes + 1} : card;
+        })
+        return updatedCards;
+      })
     })
     .catch(error => {
       console.log(error.response.data)
@@ -97,18 +111,16 @@ function App() {
 
   };
 
-  // once we code the board selector list so that people can select the board
-  // it will call this changeBoard function with the approproate board_id
   const changeBoard = (id) => {
-    // console.log(currentBoard)
-    setCurrentBoard(id)
-    axios.get(`https://m-cubed-api.onrender.com/boards/${currentBoard}/cards`)
+    axios.get(`https://m-cubed-api.onrender.com/boards/${id}/cards`)
     .then(response =>{
+      setCurrentBoard(id)
       setCards(response.data);
     });
-
+    console.log(currentBoard)
+    console.log(cards)
   };
-  // console.log(cards)
+
   return (
     <main className='App'>
       <h1>Magical Mystical Mycelium</h1>

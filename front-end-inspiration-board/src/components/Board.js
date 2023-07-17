@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import { useState } from 'react';
 
 const Board = ({ id, owner, title, changeBoardCallBack }) => {
-    const [minimized, setMinimized] = useState('show')
-    const [notMinimized, setNotMinimized] = useState('minimized')
+    const [minimized, setMinimized] = useState('minimized')
+    const [notMinimized, setNotMinimized] = useState('show')
     const toggleMinimize = () => {
         if (minimized === 'show') {
             setMinimized('minimized');
@@ -16,12 +16,16 @@ const Board = ({ id, owner, title, changeBoardCallBack }) => {
         };
     };
 
-    // const handleBoardClick = () => {
-
-    // }
+    const handleBoardClick = (id) => {
+        if (minimized === 'minimized') {
+            setMinimized('show');
+            setNotMinimized('minimized');
+        } 
+        changeBoardCallBack(id);            
+    }
 
     return (
-        <div className='board' onClick={() => changeBoardCallBack(id)}>
+        <div className='board' onClick={() => handleBoardClick(id)}>
             <div className='board-header'> 
                 <div className={`minimized-title ${notMinimized}`}>{ title }</div>
                 <div className='board-mushroom-button' onClick={() => toggleMinimize()}> 🍄 </div>
