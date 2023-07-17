@@ -19,7 +19,10 @@ const NewBoardForm = ({ addNewBoardCallback }) => {
         });
     };
 
-    const handleChange = (evt) => setFormFields({...formFields, [evt.target.name]: evt.target.value});
+    const handleChange = (evt) => {
+        setFormFields({...formFields, [evt.target.name]: evt.target.value})
+        
+    };
 
     return (
         <form onSubmit={handleSubmit} className='new_board_form'>
@@ -29,7 +32,7 @@ const NewBoardForm = ({ addNewBoardCallback }) => {
                     <div>
                     <label htmlFor='owner'>Owner: </label>
                     <input
-                        owner='owner'
+                        name='owner'
                         value={formFields.owner}
                         onChange={handleChange}
                     />

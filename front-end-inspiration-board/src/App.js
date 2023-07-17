@@ -1,5 +1,5 @@
 import './App.css';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Board from './components/Board';
 import BoardList from './components/BoardList';
@@ -29,6 +29,16 @@ const boardData = [
 
 function App() {
   const [boards, setBoards] = React.useState(boardData);
+  const [currentBoard, setCurrentBoard] = React.useState()
+  const [cards, setCards] = React.useState([])
+
+  useEffect(() => {
+    axios.get('https://m-cubed-api.onrender.com/boards')
+      .then(response => {
+        setBoards(response.data)
+      })
+  }, []);
+
 
   // const toggleLike = (id) => {
   //   setBoards(prevBoards => {
@@ -39,13 +49,12 @@ function App() {
   //   })
   // };
 
-  const [cards, setCards] = React.useState([])
 
   const addBoard = (newBoardData) => {
     axios
-      .post(`http://localhost:5000/boards`, newBoardData)
+      .post(`https://m-cubed-api.onrender.com/boards`, newBoardData)
       .then((response) => {
-        const newBoards = [...Board];
+        const newBoards = [...boards];
 
         newBoards.push({
           board_id: response.data.id,
@@ -60,7 +69,6 @@ function App() {
       });
   };
 
-  const [currentBoard, setCurrentBoard] = React.useState()
 
   // once we code the board selector list so that people can select the board
   // it will call this changeBoard function with the approproate board_id
@@ -78,7 +86,7 @@ function App() {
       <BoardList
         boards={boards}
       />
-      <NewBoardForm addNewdBoardCallback={addBoard} />
+      <NewBoardForm addNewBoardCallback={addBoard} />
       <Board />
       {/* <NewCardForm addCardCallback={addCard} /> */}
       <CardList
