@@ -11,17 +11,17 @@ import NewCardForm from './components/NewCardForm'
 
 const boardData = [
   {
-    board_id: 1, 
+    id: 1, 
     owner: "Winslow", 
     title: "My Favortie Mushrooms"
   }, 
   {
-    board_id: 2, 
+    id: 2, 
     owner: "Stacey", 
     title: "Learning about local mushrooms"
   }, 
   {
-    board_id: 3, 
+    id: 3, 
     owner: "Mikelle", 
     title: "Mushroom Manicures"
   }
@@ -29,13 +29,18 @@ const boardData = [
 
 function App() {
   const [boards, setBoards] = React.useState(boardData);
-  const [currentBoard, setCurrentBoard] = React.useState()
   const [cards, setCards] = React.useState([])
+  const [currentBoardId, setCurrentBoardId] = React.useState(1)
 
   useEffect(() => {
     axios.get('https://m-cubed-api.onrender.com/boards')
       .then(response => {
-        setBoards(response.data)
+        const newBoards = response.data
+        setBoards(newBoards)
+      })
+    axios.get(`https://m-cubed-api.onrender.com/boards/${currentBoardId}/cards`)
+      .then(response => {
+        setCards(response.data)
       })
   }, []);
 
@@ -57,7 +62,7 @@ function App() {
         const newBoards = [...boards];
 
         newBoards.push({
-          board_id: response.data.id,
+          id: response.data.id,
           owner: response.data.owner,
           title: response.data.title,
         });
@@ -72,13 +77,13 @@ function App() {
 
   // once we code the board selector list so that people can select the board
   // it will call this changeBoard function with the approproate board_id
-  const changeBoard = (board_id) => {
-    for (Board in boards){
-      if (Board.board_id==board_id) {
-        setCurrentBoard(Board)
-      } 
-  }
-};
+  // const changeBoard = (board_id) => {
+  //   for (Board in boards){
+  //     if (Board.board_id==board_id) {
+  //       setCurrentBoardId(Board)
+  //     } 
+  // }
+// };
 
   return (
     <main className='App'>
