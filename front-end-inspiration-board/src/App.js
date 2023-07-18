@@ -40,16 +40,20 @@ function App() {
       })
   }, []);
 
-
-  // const toggleLike = (id) => {
-  //   setBoards(prevBoards => {
-  //     const updatedBoards = prevBoards.map(board => {
-  //       return board.id===id ? {...board, liked: !board.liked} : entry
-  //     })
-  //     return updatedBoards;
-  //   })
-  // };
-
+  const addLike = (id) => {
+    axios.patch(`https://m-cubed-api.onrender.com/cards/${id}`)
+      .then(response => {
+        setCards(prevCards => {
+            const updatedCards = prevCards.map(card => {
+              return card.id===id ? {...card, likes: response.data.likes} : card
+            })
+            return updatedCards;
+          })
+        })
+      .catch((error) => {
+        console.log(error);
+      });
+    };
 
   const addBoard = (newBoardData) => {
     axios
