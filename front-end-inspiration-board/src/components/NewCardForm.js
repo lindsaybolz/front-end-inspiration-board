@@ -33,8 +33,8 @@ const NewCardForm = ({ addNewCardCallback }) => {
                         name='message'
                         value={formFields.message}
                         onChange={handleChange}
-                        maxlength="40"
-                        // required
+                        maxLength="40"
+                        required
                     />
                     </div>
                     <button

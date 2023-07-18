@@ -7,7 +7,7 @@ const NewBoardForm = ({ addNewBoardCallback }) => {
         owner: '',
         title: ''
     });
-    // const [hideForm, setHideForm] = React.use
+    const [hiddenBoard, setHiddenBoard] = React.useState(false)
 
 
     // const validateForm = () => {
@@ -33,39 +33,42 @@ const NewBoardForm = ({ addNewBoardCallback }) => {
     };
 
     return (
-        <form onSubmit={handleSubmit} className='new_board_form'>
-            <section>
-                <h2>Create a new board</h2>
-                <div className='new_board_fields'>
-                    <div>
-                        {/* <section className={error}>Error on new board form</section> */}
-                        <label htmlFor='owner'>Owner: </label>
-                        <input
-                            name='owner'
-                            value={formFields.owner}
-                            onChange={handleChange}
-                            required
-                        />
+        <section>
+            <button onClick={() => setHiddenBoard(!hiddenBoard)}>Hide New Board Form</button>
+            <form onSubmit={handleSubmit} className='new_board_form' hidden={hiddenBoard}>
+                <section>
+                    <h2>Create a new board</h2>
+                    <div className='new_board_fields'>
+                        <div>
+                            {/* <section className={error}>Error on new board form</section> */}
+                            <label htmlFor='owner'>Owner: </label>
+                            <input
+                                name='owner'
+                                value={formFields.owner}
+                                onChange={handleChange}
+                                required
+                            />
+                        </div>
+                        <div>
+                            <label htmlFor='title'>Title: </label>
+                            <input 
+                                name='title'
+                                value={formFields.title}
+                                onChange={handleChange}
+                                required
+                            />
+                        </div>
+                        <button
+                            className='button new_board_submit'
+                            type='submit'
+                            value='Add New Board'
+                        >
+                            Add Board
+                        </button>
                     </div>
-                    <div>
-                        <label htmlFor='title'>Title: </label>
-                        <input 
-                            name='title'
-                            value={formFields.title}
-                            onChange={handleChange}
-                            required
-                        />
-                    </div>
-                    <button
-                        className='button new_board_submit'
-                        type='submit'
-                        value='Add New Board'
-                    >
-                        Add Board
-                    </button>
-                </div>
-            </section>
-        </form>
+                </section>
+            </form>
+        </section>
     );
 };
 
