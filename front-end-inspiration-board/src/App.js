@@ -112,7 +112,7 @@ function App() {
       <NewBoardForm addNewBoardCallback={addBoard} />
       <NewCardForm addNewCardCallback={addCard} />
       <CardList
-        cards={cards}
+        cards={cards} addLikeCallback={addLike}
       />
     </main>
   );
