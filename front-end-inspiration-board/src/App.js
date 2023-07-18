@@ -123,7 +123,7 @@ function App() {
 
   return (
     <main className='App'>
-      <h1>Inspiration Board</h1>
+      <h1 className='Header'>Inspiration Board</h1>
       <BoardList
         boards={boards} changeBoardCallback={changeBoard}
       />

@@ -20,7 +20,7 @@ const CardList = ({ cards, addLikeCallback, removeCardCallback, sortCardsCallbac
     )})
     
     return (
-        <section>
+        <section className='CardList'>
             <h1>Card List: </h1>
             <button onClick={() => sortCardsCallback(cards)}>Sort Alphabetically</button>
             <ul>
