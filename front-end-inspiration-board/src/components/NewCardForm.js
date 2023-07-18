@@ -33,13 +33,14 @@ const NewCardForm = ({ addNewCardCallback }) => {
                         name='message'
                         value={formFields.message}
                         onChange={handleChange}
+                        maxlength="40"
+                        // required
                     />
                     </div>
                     <button
                         className='button new_card_submit'
                         type='submit'
-                        value='Add New Card'
-                    >
+                        value='Add New Card'>
                         Add Card
                     </button>
                 </div>
