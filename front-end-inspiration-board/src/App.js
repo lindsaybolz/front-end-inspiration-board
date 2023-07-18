@@ -97,7 +97,7 @@ function App() {
   const changeBoard = (id) => {
     setCurrentBoardId(id);
     // console.log(currentBoardId)
-    axios.get(`https://m-cubed-api.onrender.com/boards/${currentBoardId}/cards`)
+    axios.get(`https://m-cubed-api.onrender.com/boards/${id}/cards`)
       .then(response => {
         setCards(response.data);
       });
@@ -110,7 +110,7 @@ function App() {
         boards={boards} changeBoardCallback={changeBoard}
       />
       <NewBoardForm addNewBoardCallback={addBoard} />
-      <NewCardForm addCardCallback={addCard} />
+      <NewCardForm addNewCardCallback={addCard} />
       <CardList
         cards={cards}
       />
