@@ -7,10 +7,19 @@ const NewBoardForm = ({ addNewBoardCallback }) => {
         owner: '',
         title: ''
     });
+    // const [hideForm, setHideForm] = React.use
 
+
+    // const validateForm = () => {
+    //     if (formFields.owner === '' || formFields.title === '') {
+    //       alert("Please fill out all fields");
+    //       return false;
+    //     }
+    // }
+      
     const handleSubmit = (event) => {
         event.preventDefault();
-
+        // validateForm();
         addNewBoardCallback(formFields);
 
         setFormFields({
@@ -21,7 +30,6 @@ const NewBoardForm = ({ addNewBoardCallback }) => {
 
     const handleChange = (evt) => {
         setFormFields({...formFields, [evt.target.name]: evt.target.value})
-        
     };
 
     return (
@@ -30,12 +38,14 @@ const NewBoardForm = ({ addNewBoardCallback }) => {
                 <h2>Create a new board</h2>
                 <div className='new_board_fields'>
                     <div>
-                    <label htmlFor='owner'>Owner: </label>
-                    <input
-                        name='owner'
-                        value={formFields.owner}
-                        onChange={handleChange}
-                    />
+                        {/* <section className={error}>Error on new board form</section> */}
+                        <label htmlFor='owner'>Owner: </label>
+                        <input
+                            name='owner'
+                            value={formFields.owner}
+                            onChange={handleChange}
+                            required
+                        />
                     </div>
                     <div>
                         <label htmlFor='title'>Title: </label>
@@ -43,6 +53,7 @@ const NewBoardForm = ({ addNewBoardCallback }) => {
                             name='title'
                             value={formFields.title}
                             onChange={handleChange}
+                            required
                         />
                     </div>
                     <button
