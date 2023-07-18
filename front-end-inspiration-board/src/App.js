@@ -92,7 +92,7 @@ function App() {
 
   const changeBoard = (id) => {
     setCurrentBoardId(id);
-    console.log(currentBoardId)
+    // console.log(currentBoardId)
     axios.get(`https://m-cubed-api.onrender.com/boards/${currentBoardId}/cards`)
       .then(response => {
         setCards(response.data);

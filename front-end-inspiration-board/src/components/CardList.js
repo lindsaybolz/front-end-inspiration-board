@@ -5,7 +5,7 @@ import Card from './Card';
 
 
 const CardList = ({ cards }) => {
-    console.log(cards)
+    // console.log(cards)
     const cardComponents = cards.map(cardInstance => {
         return(
             <li key={cardInstance.id}>
