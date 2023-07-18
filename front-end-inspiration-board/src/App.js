@@ -30,7 +30,7 @@ const boardData = [
 function App() {
   const [boards, setBoards] = React.useState(boardData);
   const [cards, setCards] = React.useState([])
-  const [currentBoardId, setCurrentBoardId] = React.useState(1)
+  const [currentBoardId, setCurrentBoardId] = React.useState(0)
 
   useEffect(() => {
     axios.get('https://m-cubed-api.onrender.com/boards')
@@ -38,10 +38,11 @@ function App() {
         const newBoards = response.data
         setBoards(newBoards)
       })
-    axios.get(`https://m-cubed-api.onrender.com/boards/${currentBoardId}/cards`)
-      .then(response => {
-        setCards(response.data)
-      })
+    // likely will move below code to change boards section:  
+    // axios.get(`https://m-cubed-api.onrender.com/boards/${currentBoardId}/cards`)
+    //   .then(response => {
+    //     setCards(response.data)
+    //   })
   }, []);
 
 
@@ -74,6 +75,26 @@ function App() {
       });
   };
 
+  const addCard = (newCardData) => {
+    axios
+      .post(`https://m-cubed-api.onrender.com/boards/${currentBoardId}/cards`, newCardData)
+      .then((response) => {
+        const newCards = [...cards];
+
+        newCards.push({
+          id: response.data.id,
+          message: response.data.message,
+          likes: response.data.likes,
+          board: response.data.board
+        });
+
+        setCards(newCards);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
 
   // once we code the board selector list so that people can select the board
   // it will call this changeBoard function with the approproate board_id
@@ -93,7 +114,7 @@ function App() {
       />
       <NewBoardForm addNewBoardCallback={addBoard} />
       <Board />
-      {/* <NewCardForm addCardCallback={addCard} /> */}
+      <NewCardForm addCardCallback={addCard} />
       <CardList
         cards={cards}
       />
