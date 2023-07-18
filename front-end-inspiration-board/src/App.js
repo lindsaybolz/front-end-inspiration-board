@@ -103,6 +103,16 @@ function App() {
       });
   };
 
+  const removeCard = (id) => {
+    axios.delete(`https://m-cubed-api.onrender.com/cards/${id}`)
+    .then(response => {
+      setCards(prevCards => {
+        const updatedCards = prevCards.filter(card => card.id !== id);
+        return updatedCards
+      })  
+    });
+  }
+
   return (
     <main className='App'>
       <h1>Inspiration Board</h1>
@@ -112,7 +122,9 @@ function App() {
       <NewBoardForm addNewBoardCallback={addBoard} />
       <NewCardForm addNewCardCallback={addCard} />
       <CardList
-        cards={cards} addLikeCallback={addLike}
+        cards={cards} 
+        addLikeCallback={addLike} 
+        removeCardCallback={removeCard}
       />
     </main>
   );

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Card from './Card';
 
 
-const CardList = ({ cards, addLikeCallback }) => {
+const CardList = ({ cards, addLikeCallback, removeCardCallback }) => {
     // console.log(cards)
     const cardComponents = cards.map(cardInstance => {
         return(
@@ -14,6 +14,7 @@ const CardList = ({ cards, addLikeCallback }) => {
                     message={cardInstance.message}
                     likes={cardInstance.likes}
                     addLikeCallback={addLikeCallback}
+                    removeCardCallback={removeCardCallback}
                 />
             </li>
     )})
@@ -36,7 +37,8 @@ CardList.propTypes = {
             likes: PropTypes.number.isRequired,
         })
     ),
-    addLikeCallback: PropTypes.func.isRequired
+    addLikeCallback: PropTypes.func.isRequired,
+    removeCardCallback: PropTypes.func.isRequired,
 }
 
 export default CardList;
