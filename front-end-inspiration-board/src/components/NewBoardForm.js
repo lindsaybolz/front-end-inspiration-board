@@ -21,7 +21,7 @@ const NewBoardForm = ({ addNewBoardCallback }) => {
     };
 
     return (
-        <section>
+        <section className='NewBoardForm'>
             <button onClick={() => setHiddenBoard(!hiddenBoard)}>Hide New Board Form</button>
             <form onSubmit={handleSubmit} className='new_board_form' hidden={hiddenBoard}>
                 <section>

@@ -28,41 +28,18 @@ h1 {
   /* color: rgb(64, 17, 97); */
   line-height: 0.9;
   text-align: center;
-  /* font-family: Apple Chancery, cursive; */
-  font-size: 4em;
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-columns: 33% 33% 33%;
+  grid-template-rows: 1/5 1/5 1/5 1/5 1/5;
+  row-gap: 1em;
+  column-gap: 1em;
 }
 
-.content {
-  display: flex;
+.Header{
+  background-color: lightgray;
+  text-align: center;
+  grid-column-start: 1;
+  grid-column-end: 4;
 }
-
-
-.left-column {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-}
-/* 
-h1 {
-  grid-column: 1 / 3;
-}
-
-.BoardList {
-  grid-column: 1 / 2;
-  grid-row: 2 / 3;
-}
-
-.NewBoardForm {
-  grid-column: 1 / 2;
-  grid-row: 3 / 4;
-}
-
-.NewCardForm {
-  grid-column: 1 / 2;
-  grid-row: 4 / 5;
-}
-
-.CardList {
-  grid-column: 2 / 3;
-}
- */
