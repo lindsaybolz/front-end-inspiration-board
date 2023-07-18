@@ -29,16 +29,12 @@ const boardData = [
 function App() {
   const [boards, setBoards] = useState(boardData);
   const [cards, setCards] = useState([])
-  const [currentBoard, setCurrentBoard] = useState(1)
+  const [currentBoard, setCurrentBoard] = useState(0)
   
   useEffect(() => {
     axios.get('https://m-cubed-api.onrender.com/boards')
       .then(response => {
         setBoards(response.data)
-      });
-    axios.get(`https://m-cubed-api.onrender.com/boards/${ currentBoard }/cards`)
-      .then(response =>{
-        setCards(response.data);
       });
   }, []);
 
@@ -48,11 +44,10 @@ function App() {
       .then((response) => {
 
         const newBoards = [...boards];
-        const nextId = Math.max(...newBoards.map(board=>board.id)) + 1;
         newBoards.push({
-          id: nextId,
-          owner: newBoardData.owner,
-          title: newBoardData.title,
+          id: response.data.id,
+          owner: response.data.owner,
+          title: response.data.title,
         })
         setBoards(newBoards);
       })
@@ -66,14 +61,11 @@ function App() {
       .post(`https://m-cubed-api.onrender.com/boards/${currentBoard}/cards`, newCardData)
       .then((response) => {
         const newCards = [...cards];
-        const nextId = Math.max(...newCards.map(card=>card.id)) + 1;
-        const board = boards.filter(board => board.id === currentBoard);
-        const boardTitle = board[0].title;
         newCards.push({
-          id: nextId,
-          likes: 0,
-          message: newCardData.message,
-          board: boardTitle,
+          id: response.data.id,
+          likes: response.data.likes,
+          message: response.data.message,
+          board: response.data.board,
         })
         setCards(newCards);
       })
