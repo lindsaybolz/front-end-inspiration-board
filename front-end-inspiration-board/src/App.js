@@ -124,17 +124,14 @@ function App() {
   return (
     <main className='App'>
       <h1>Inspiration Board</h1>
-      <BoardList
-        boards={boards} changeBoardCallback={changeBoard}
-      />
-      <NewBoardForm addNewBoardCallback={addBoard} />
-      <NewCardForm addNewCardCallback={addCard} />
-      <CardList
-        cards={cards} 
-        addLikeCallback={addLike} 
-        removeCardCallback={removeCard}
-        sortCardsCallback={sortCards}
-      />
+      <section className='content'>
+        <div className='left-column'>
+          <BoardList className='board-list' boards={boards} changeBoardCallback={changeBoard}/>
+          <NewBoardForm className='new-board-form' addNewBoardCallback={addBoard} />
+          <NewCardForm className='new-card-form' addNewCardCallback={addCard} />
+        </div>
+        <CardList className='card-list' cards={cards} addLikeCallback={addLike} removeCardCallback={removeCard} sortCardsCallback={sortCards}/>
+      </section>
     </main>
   );
 }
