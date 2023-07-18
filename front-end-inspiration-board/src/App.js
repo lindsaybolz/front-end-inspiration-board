@@ -38,11 +38,6 @@ function App() {
         const newBoards = response.data
         setBoards(newBoards)
       })
-    // likely will move below code to change boards section:  
-    // axios.get(`https://m-cubed-api.onrender.com/boards/${currentBoardId}/cards`)
-    //   .then(response => {
-    //     setCards(response.data)
-    //   })
   }, []);
 
 
@@ -95,30 +90,26 @@ function App() {
       });
   };
 
-
-  // once we code the board selector list so that people can select the board
-  // it will call this changeBoard function with the approproate board_id
-  // const changeBoard = (board_id) => {
-  //   for (Board in boards){
-  //     if (Board.board_id==board_id) {
-  //       setCurrentBoardId(Board)
-  //     } 
-  // }
-// };
+  const changeBoard = (id) => {
+    setCurrentBoardId(id);
+    console.log(currentBoardId)
+    axios.get(`https://m-cubed-api.onrender.com/boards/${currentBoardId}/cards`)
+      .then(response => {
+        setCards(response.data);
+      });
+  };
 
   return (
     <main className='App'>
       <h1>Inspiration Board</h1>
       <BoardList
-        boards={boards}
+        boards={boards} changeBoardCallback={changeBoard}
       />
       <NewBoardForm addNewBoardCallback={addBoard} />
-      <Board />
       <NewCardForm addCardCallback={addCard} />
       <CardList
         cards={cards}
       />
-      <Card />
     </main>
   );
 }

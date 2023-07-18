@@ -3,14 +3,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Board from './Board';
 
-const BoardList = ({ boards }) => {
+const BoardList = ({ boards, changeBoardCallback }) => {
     const boardComponents = boards.map(boardInstance => {
         return(
             <li key={boardInstance.id}>
                 <Board
-                board_id={boardInstance.board_id}
+                id={boardInstance.id}
                 owner={boardInstance.owner}
                 title={boardInstance.title}
+                changeBoardCallback={changeBoardCallback}
                 />
             </li>
     )})
@@ -27,11 +28,12 @@ const BoardList = ({ boards }) => {
 BoardList.propTypes = {
     boards: PropTypes.arrayOf(
         PropTypes.shape({
-            board_id: PropTypes.number.isRequired,
+            id: PropTypes.number.isRequired,
             owner: PropTypes.string.isRequired,
             title: PropTypes.string.isRequired,
         })
-    )
+    ),
+    changeBoardCallback: PropTypes.func.isRequired
 }
 
 export default BoardList;

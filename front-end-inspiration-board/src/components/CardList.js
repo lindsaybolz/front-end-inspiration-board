@@ -19,6 +19,7 @@ const CardList = ({ cards }) => {
     
     return (
         <section>
+            <h1>Card List: </h1>
             <ul>
                 {cardComponents}
             </ul>
