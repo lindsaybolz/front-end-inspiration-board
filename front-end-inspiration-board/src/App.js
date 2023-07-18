@@ -40,6 +40,14 @@ function App() {
       })
   }, []);
 
+  const sortCards = (cards) => {
+      const newCards = [...cards]
+      const sortedCards = newCards.sort(
+        (card1, card2) => (card1.message > card2.message) ? 1 : -1
+      );
+      setCards(sortedCards)
+  }
+
   const addLike = (id) => {
     axios.patch(`https://m-cubed-api.onrender.com/cards/${id}`)
       .then(response => {
@@ -86,7 +94,6 @@ function App() {
           likes: response.data.likes,
           board: response.data.board
         });
-
         setCards(newCards);
       })
       .catch((error) => {
@@ -108,6 +115,7 @@ function App() {
     .then(response => {
       setCards(prevCards => {
         const updatedCards = prevCards.filter(card => card.id !== id);
+        
         return updatedCards
       })  
     });
@@ -125,6 +133,7 @@ function App() {
         cards={cards} 
         addLikeCallback={addLike} 
         removeCardCallback={removeCard}
+        sortCardsCallback={sortCards}
       />
     </main>
   );

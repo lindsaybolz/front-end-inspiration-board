@@ -3,23 +3,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const NewBoardForm = ({ addNewBoardCallback }) => {
-    const [formFields, setFormFields] = React.useState({
-        owner: '',
-        title: ''
-    });
+    const [formFields, setFormFields] = React.useState({owner: '', title: ''});
     const [hiddenBoard, setHiddenBoard] = React.useState(false)
-
-
-    // const validateForm = () => {
-    //     if (formFields.owner === '' || formFields.title === '') {
-    //       alert("Please fill out all fields");
-    //       return false;
-    //     }
-    // }
       
     const handleSubmit = (event) => {
         event.preventDefault();
-        // validateForm();
         addNewBoardCallback(formFields);
 
         setFormFields({
@@ -40,7 +28,6 @@ const NewBoardForm = ({ addNewBoardCallback }) => {
                     <h2>Create a new board</h2>
                     <div className='new_board_fields'>
                         <div>
-                            {/* <section className={error}>Error on new board form</section> */}
                             <label htmlFor='owner'>Owner: </label>
                             <input
                                 name='owner'
