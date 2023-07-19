@@ -7,17 +7,24 @@
     color: aliceblue;
     font-family: optima, sans-serif;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
 }
 
 .card-header{
-    background-color: slategrey;
+    background-image: linear-gradient(to bottom right, lightgreen, green); 
+    box-shadow: 5px 2px 10px black;
 }
 
+.CardList-UL{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 
 .sort-alphabetically-button {
-    font-size: 1.5em;
+    font-size: 3em;
+    margin: 0px;
 }
 
 .sort-alphabetically-button:hover {

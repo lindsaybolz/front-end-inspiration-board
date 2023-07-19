@@ -1,17 +1,21 @@
 import './CardList.css';
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Card from './Card';
 
 
 const CardList = ({ cards, addLikeCallback, removeCardCallback, sortCardsCallback }) => {
-    // console.log(cards)
     
-    const boardTitle = ''
-    if (!cards === []) {
-        console.log(cards)
-        boardTitle = cards[0].board
+    const [hiddenCardList, setHiddenCardList] = useState(true)
+
+    let boardTitle = '';
+    if (cards.length > 0) {
+        // setHiddenCardList(false)
+        boardTitle = cards[0].board;
+    } else {
+        // setHiddenCardList(true)
     }
+
     const cardComponents = cards.map(cardInstance => {
         return(
             <li key={cardInstance.id}>
@@ -27,11 +31,13 @@ const CardList = ({ cards, addLikeCallback, removeCardCallback, sortCardsCallbac
     
     return (
         <section className='CardList'>
-            <h2 className='card-header'>Cards for {boardTitle}</h2>
-            <div className='sort-alphabetically-button' onClick={() => sortCardsCallback(cards)}>🔤</div>
-            <ul>
-                {cardComponents}
-            </ul>
+            <div hidden={(cards.length === 0) ? true : false}>
+                <h2 className='card-header'>Cards for {boardTitle}</h2>
+                <div className='sort-alphabetically-button' onClick={() => sortCardsCallback(cards)}>🔤</div>
+                <ul className='CardList-UL'>
+                    {cardComponents}
+                </ul>
+            </div>
         </section>
     )
 }
