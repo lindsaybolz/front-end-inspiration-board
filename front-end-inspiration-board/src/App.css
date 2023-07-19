@@ -28,8 +28,8 @@
   grid-column-end: 4;
   font-family: 'Macondo', cursive;
   font-size: 70px;
-  color: lightgray;
-  text-shadow: 5px 5px 0px rgba(0,0,0,0.2), 4px 4px 8px rgba(0,0,0,0.2);
+  color: #2596be;
+  text-shadow: 5px 5px 0px rgba(0, 0, 0, 0.2), 4px 4px 8px rgba(0,0,0,0.2);
   margin:5px;
   padding:5px;
 }
