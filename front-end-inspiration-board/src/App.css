@@ -1,32 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Macondo&display=swap');
+
 .App {
-  /* position: relative;  */
-  height: 100%;
-  width: 100%;
-  line-height: 0.9;
+  height: 100vh;
+  width: 100vw;
+  margin: 0px; 
+  padding: 0px;
+  background: url('https://img.freepik.com/premium-photo/enchanted-forest-magic-natural-landscape-river-flow-background-fairy-tale-forest_336343-57.jpg?w=1800');
+  background-size: cover;
+}
+
+.Container {
   text-align: center;
+  justify-content: center;
   display: grid;
-  width: 100%;
-  height: 100%;
+  width: 90vw;
+  height: 90vh;
   grid-template-columns: 33% 33% 33%;
   grid-template-rows: 1/5 1/5 1/5 1/5 1/5;
   row-gap: 1em;
   column-gap: 1em;
-  /* display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column; */
+  margin-left: 5%;
 }
-/* .App::before {
-  content: "";
-  background: url('../public/blank-cork-board-background.jpeg');
-  background-size: cover;
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-  opacity: 0.75;
-} */
+
+.Header{
+  text-align: center;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  font-family: 'Macondo', cursive;
+  font-size: 70px;
+  color: lightgray;
+  text-shadow: 5px 5px 0px rgba(0,0,0,0.2), 4px 4px 8px rgba(0,0,0,0.2);
+  margin:5px;
+  padding:5px;
+}
+
+.Footer{
+  color:white;
+}
+
 
 /* h1 {
   /* position: relative;
@@ -40,10 +51,15 @@
   grid-template-rows: 1/5 1/5 1/5 1/5 1/5;
   row-gap: 1em;
   column-gap: 1em;} */
-
-.Header{
-  background-color: lightgray;
-  text-align: center;
-  grid-column-start: 1;
-  grid-column-end: 4;
-}
+  
+  /* .App::before {
+    content: "";
+    background: url('../public/blank-cork-board-background.jpeg');
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.75;
+  } */

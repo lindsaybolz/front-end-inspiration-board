@@ -123,18 +123,21 @@ function App() {
 
   return (
     <main className='App'>
-      <h1 className='Header'>Inspiration Board</h1>
-      <BoardList
-        boards={boards} changeBoardCallback={changeBoard}
-      />
-      <NewBoardForm addNewBoardCallback={addBoard} />
-      <NewCardForm addNewCardCallback={addCard} />
-      <CardList
-        cards={cards} 
-        addLikeCallback={addLike} 
-        removeCardCallback={removeCard}
-        sortCardsCallback={sortCards}
-      />
+      <div className='Container'>
+        <h1 className='Header'>Mythical Mycology Muse</h1>
+        <BoardList
+          boards={boards} changeBoardCallback={changeBoard}
+        />
+        <NewBoardForm addNewBoardCallback={addBoard} />
+        <NewCardForm addNewCardCallback={addCard} />
+        <CardList
+          cards={cards} 
+          addLikeCallback={addLike} 
+          removeCardCallback={removeCard}
+          sortCardsCallback={sortCards}
+        />
+      </div>
+      <footer className='Footer'>2023 ADA Develeopers Academy. Group 5. Lindsay, Stacey, Stacy, Winslow. </footer>
     </main>
   );
 }
