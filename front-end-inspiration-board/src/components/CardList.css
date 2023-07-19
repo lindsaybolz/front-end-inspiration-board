@@ -1,5 +1,4 @@
 .CardList{
-    /* background-color: lightpink; */
     grid-column-start: 2;
     grid-column-end: 4;
     grid-row-start: 2;
@@ -11,7 +10,6 @@
     flex-wrap: wrap;
     justify-content: center;
     overflow: scroll;
-    /* border: solid; */
 }
 
 .card-header{
@@ -23,9 +21,6 @@
     box-shadow: 5px 2px 10px black;
     height: 200px;
     width: 200px;
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* justify-content: center; */
 }
 .CardList-UL{
     display: flex;

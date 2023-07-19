@@ -5,17 +5,11 @@
     grid-row-end: 3;
     margin:2px;
     padding:2px;
-    /* border:5px;
-    border-color: red;
-    border-style: solid; */
 }
 
 .NewBoardFormInnerContainer{
     margin:2px;
 }
-
-/* .new_board_form{
-} */
 
 form{
     border:5px;
@@ -26,9 +20,6 @@ form{
     background-color: #b49c22;
     opacity:85%;
 }
-/* .NewBoardFormButton{
-    opacity: 100%;
-} */
 
 button{
     opacity:100%;
@@ -56,7 +47,6 @@ button:hover{
 }
 
 h2{
-    /* color:#a42015; */
     color: #d22246;
     font-size: 35px;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;

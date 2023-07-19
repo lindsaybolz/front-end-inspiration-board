@@ -10,11 +10,8 @@ const CardList = ({ cards, addLikeCallback, removeCardCallback, sortCardsCallbac
 
     let boardTitle = '';
     if (cards.length > 0) {
-        // setHiddenCardList(false)
         boardTitle = cards[0].board;
-    } else {
-        // setHiddenCardList(true)
-    }
+    };
 
     const cardComponents = cards.map(cardInstance => {
         return(
