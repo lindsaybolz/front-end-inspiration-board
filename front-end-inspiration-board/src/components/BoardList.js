@@ -18,8 +18,7 @@ const BoardList = ({ boards, changeBoardCallback }) => {
     
     return (
         <section className='BoardList'>
-            <h2 className='BoardHeader'>Boards:</h2>
-            <ul>
+            <ul className='BoardList-UL'>
                 {boardComponents}
             </ul>
         </section>

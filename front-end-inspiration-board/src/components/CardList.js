@@ -10,11 +10,8 @@ const CardList = ({ cards, addLikeCallback, removeCardCallback, sortCardsCallbac
 
     let boardTitle = '';
     if (cards.length > 0) {
-        // setHiddenCardList(false)
         boardTitle = cards[0].board;
-    } else {
-        // setHiddenCardList(true)
-    }
+    };
 
     const cardComponents = cards.map(cardInstance => {
         return(
@@ -31,6 +28,7 @@ const CardList = ({ cards, addLikeCallback, removeCardCallback, sortCardsCallbac
     
     return (
         <section className='CardList'>
+            <h2 className='no-board-selected' hidden={(cards.length === 0) ? false : true}>No Cards</h2>
             <div hidden={(cards.length === 0) ? true : false}>
                 <h2 className='card-header'>Cards for {boardTitle}</h2>
                 <div className='sort-alphabetically-button' onClick={() => sortCardsCallback(cards)}>🔤</div>

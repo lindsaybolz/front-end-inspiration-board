@@ -1,5 +1,4 @@
 .Board{
-    /* background-color: lightslategray; */
     background-image: linear-gradient(to bottom right, lightslategray, grey);
     margin: 1em;
     align-items: center;
@@ -9,6 +8,8 @@
     flex-direction: column;
     flex-wrap: wrap;
     padding: .5em;
+    height: 125px;
+    width: 125px;
 
 }
 

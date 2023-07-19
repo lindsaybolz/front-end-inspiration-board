@@ -1,5 +1,4 @@
 .card {
-    /* border: solid; */
     background-image: linear-gradient(to bottom right, lightgreen, green); 
     margin: 1em;
     align-items: center;
@@ -33,12 +32,10 @@
 
 
 .remove-card-button {
-    /* background-color: lightsalmon; */
     font-size: 2.5em;
     transform: rotate(270deg);
 }
 .remove-card-button:hover {
-    /* background-color: lightsalmon; */
     font-size: 3em;
     opacity: .8;
 }

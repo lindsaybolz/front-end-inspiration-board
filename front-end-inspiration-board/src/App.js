@@ -1,10 +1,8 @@
 import './App.css';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Board from './components/Board';
 import BoardList from './components/BoardList';
 import NewBoardForm from './components/NewBoardForm';
-import Card from './components/Card';
 import CardList from './components/CardList';
 import NewCardForm from './components/NewCardForm'
 
@@ -103,7 +101,6 @@ function App() {
 
   const changeBoard = (id) => {
     setCurrentBoardId(id);
-    // console.log(currentBoardId)
     axios.get(`https://m-cubed-api.onrender.com/boards/${id}/cards`)
       .then(response => {
         setCards(response.data);

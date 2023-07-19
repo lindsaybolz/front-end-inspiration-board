@@ -1,21 +1,27 @@
 .CardList{
-    /* background-color: lightpink; */
     grid-column-start: 2;
     grid-column-end: 4;
     grid-row-start: 2;
-    grid-row-end: 6;
+    grid-row-end: 4;
     color: aliceblue;
     font-family: optima, sans-serif;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
+    overflow: scroll;
 }
 
 .card-header{
     background-image: linear-gradient(to bottom right, lightgreen, green); 
     box-shadow: 5px 2px 10px black;
 }
-
+.no-board-selected {
+    background-image: linear-gradient(to bottom right, lightgreen, green); 
+    box-shadow: 5px 2px 10px black;
+    height: 200px;
+    width: 200px;
+}
 .CardList-UL{
     display: flex;
     flex-wrap: wrap;
@@ -23,10 +29,10 @@
 }
 
 .sort-alphabetically-button {
-    font-size: 3em;
+    font-size: 2em;
     margin: 0px;
 }
 
 .sort-alphabetically-button:hover {
-    font-size: 2em;
+    font-size: 3em;
 }
