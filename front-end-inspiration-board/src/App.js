@@ -137,7 +137,7 @@ function App() {
           sortCardsCallback={sortCards}
         />
       </div>
-      <footer className='Footer'>2023 ADA Develeopers Academy. Group 5. Lindsay, Stacey, Stacy, Winslow. </footer>
+      {/* <footer className='Footer'>2023 ADA Develeopers Academy. Group 5. Lindsay, Stacey, Stacy, Winslow. </footer> */}
     </main>
   );
 }
