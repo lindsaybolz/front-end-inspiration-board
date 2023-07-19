@@ -35,8 +35,6 @@ button{
     padding: 8px 6px;
     font-size: 20px;
     border-radius: 10px;
-    background-color:#c4d2d2;
-    color: #0b0806;
     margin:2px;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-weight: bolder;
@@ -45,6 +43,16 @@ button{
 button:hover{
     color:#c4d2d2;
     background-color: #2c3619;
+}
+
+.NewBoardFormButton{
+    background-color:#2c3619;;
+    color: white;
+}
+
+..NewBoardFormButton:hover{
+    background-color:#cf5480;
+    color: white;
 }
 
 h2{
@@ -83,9 +91,11 @@ input{
 .new_board_submit_button{
     margin:3px;
     margin-top: 8px;
+    background-color:#cf5480;
+    color: white;
 }
 
 .new_board_submit_button:hover{
     color:white;
-    background-color:black;
+    background-color:#2c3619;
 }
