@@ -34,7 +34,7 @@ const CardList = ({ cards, addLikeCallback, removeCardCallback, sortCardsCallbac
             <div hidden={(cards.length === 0) ? true : false}>
                 <h2 className='card-header'>Cards for {boardTitle}</h2>
                 <div className='sort-alphabetically-button' onClick={() => sortCardsCallback(cards)}>🔤</div>
-                <ul>
+                <ul className='CardList-UL'>
                     {cardComponents}
                 </ul>
             </div>

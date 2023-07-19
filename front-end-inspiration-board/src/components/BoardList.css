@@ -16,5 +16,6 @@ ul{
 }
 
 .BoardHeader{
-    background-color: slategrey;
+    background-image: linear-gradient(to bottom right, lightslategray, grey);
+    box-shadow: 5px 2px 10px black;
 }
