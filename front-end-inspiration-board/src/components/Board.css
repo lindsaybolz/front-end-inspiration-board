@@ -9,6 +9,8 @@
     flex-direction: column;
     flex-wrap: wrap;
     padding: .5em;
+    height: 150px;
+    width: 150px;
 
 }
 
