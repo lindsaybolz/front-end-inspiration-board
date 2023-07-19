@@ -4,14 +4,9 @@ import PropTypes from 'prop-types';
 
 const Board = ({ id, owner, title, changeBoardCallback }) => {
     return (
-        <div onClick={()=>changeBoardCallback(id)}>
-            {id} {title} {owner}
-            {/* <select
-            id={id}
-            options={id} {title} {owner}
-            // onChange={handleChange}
-            >
-            </select> */}
+        <div className='Board' onClick={()=>changeBoardCallback(id)}>
+            <div className='Title'>{title}</div>
+            <div className='Owner'>{owner}</div>
         </div>
     )
 } 
