@@ -5,13 +5,13 @@ import Card from './Card';
 
 
 const CardList = ({ cards, addLikeCallback, removeCardCallback, sortCardsCallback }) => {
-    // console.log(cards)
     
-    const boardTitle = ''
-    if (!cards === []) {
-        console.log(cards)
-        boardTitle = cards[0].board
-    }
+    let boardTitle = '';
+    if (cards.length > 0) {
+        console.log(cards);
+        boardTitle = cards[0].board;
+    };
+
     const cardComponents = cards.map(cardInstance => {
         return(
             <li key={cardInstance.id}>
