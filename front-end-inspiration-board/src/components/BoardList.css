@@ -1,7 +1,18 @@
 .BoardList{
-    background-color: aliceblue;
+    color: aliceblue;
+    font-family: optima, sans-serif;
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 2;
     grid-row-end: 3;
+    display: flex;
+    flex-direction: column;
+}
+
+ul{
+    list-style: none;
+}
+
+.BoardHeader{
+    background-color: slategrey;
 }

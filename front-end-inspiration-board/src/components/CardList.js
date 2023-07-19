@@ -6,6 +6,12 @@ import Card from './Card';
 
 const CardList = ({ cards, addLikeCallback, removeCardCallback, sortCardsCallback }) => {
     // console.log(cards)
+    
+    const boardTitle = ''
+    if (!cards === []) {
+        console.log(cards)
+        boardTitle = cards[0].board
+    }
     const cardComponents = cards.map(cardInstance => {
         return(
             <li key={cardInstance.id}>
@@ -21,8 +27,8 @@ const CardList = ({ cards, addLikeCallback, removeCardCallback, sortCardsCallbac
     
     return (
         <section className='CardList'>
-            <h1>Card List: </h1>
-            <button onClick={() => sortCardsCallback(cards)}>Sort Alphabetically</button>
+            <h2 className='card-header'>Cards for {boardTitle}</h2>
+            <div className='sort-alphabetically-button' onClick={() => sortCardsCallback(cards)}>🔤</div>
             <ul>
                 {cardComponents}
             </ul>
