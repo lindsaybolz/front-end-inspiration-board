@@ -23,29 +23,35 @@ const NewCardForm = ({ addNewCardCallback }) => {
     };
 
     return (
-        <form onSubmit={handleSubmit} className='new_card_form'>
-            <section>
-                <h2>Create a new card</h2>
-                <div className='new_card_fields'>
-                    <div>
-                    <label htmlFor='message'>Message: </label>
-                    <input
-                        name='message'
-                        value={formFields.message}
-                        onChange={handleChange}
-                        maxLength="40"
-                        required
-                    />
+        <section className='NewCardFormOuterContainer'>
+            <form onSubmit={handleSubmit} className='new_card_form'>
+
+                <section>
+                    <h2>Create a new card</h2>
+
+                    <div className='NewCardInnerContainer'>
+                        <div>
+                            <label htmlFor='message'>Message: </label>
+                            <input
+                                name='message'
+                                value={formFields.message}
+                                onChange={handleChange}
+                                maxLength="40"
+                                required
+                            />
+                        </div>
+                        
+                        <button
+                            className='button new_card_submit'
+                            type='submit'
+                            value='Add New Card'>
+                            Add Card
+                        </button>
                     </div>
-                    <button
-                        className='button new_card_submit'
-                        type='submit'
-                        value='Add New Card'>
-                        Add Card
-                    </button>
-                </div>
-            </section>
-        </form>
+
+                </section>
+            </form>
+        </section>
     );
 };
 
