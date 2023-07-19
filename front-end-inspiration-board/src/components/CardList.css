@@ -1,7 +1,25 @@
 .CardList{
-    background-color: lightpink;
+    /* background-color: lightpink; */
     grid-column-start: 2;
     grid-column-end: 4;
     grid-row-start: 2;
     grid-row-end: 6;
+    color: aliceblue;
+    font-family: optima, sans-serif;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.card-header{
+    background-color: slategrey;
+}
+
+
+.sort-alphabetically-button {
+    font-size: 1.5em;
+}
+
+.sort-alphabetically-button:hover {
+    font-size: 2em;
 }
