@@ -31,6 +31,7 @@ const CardList = ({ cards, addLikeCallback, removeCardCallback, sortCardsCallbac
     
     return (
         <section className='CardList'>
+            <h2 className='no-board-selected' hidden={(cards.length === 0) ? false : true}>No Board Currently Selected</h2>
             <div hidden={(cards.length === 0) ? true : false}>
                 <h2 className='card-header'>Cards for {boardTitle}</h2>
                 <div className='sort-alphabetically-button' onClick={() => sortCardsCallback(cards)}>🔤</div>
