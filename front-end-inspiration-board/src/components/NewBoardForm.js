@@ -26,7 +26,7 @@ const NewBoardForm = ({ addNewBoardCallback }) => {
             <div className='NewBoardFormInnerContainer'>
                 <form onSubmit={handleSubmit} className='new_board_form' hidden={hiddenBoard}>
                     <section>
-                        <h2>Create a new board</h2>
+                        <h2 className='h2s'>Create a new board</h2>
 
                         <div className='new_board_fields'>
                             <div>
