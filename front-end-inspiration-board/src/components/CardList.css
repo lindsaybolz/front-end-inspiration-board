@@ -1,10 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Macondo&display=swap');
+
 .CardList{
     grid-column-start: 2;
     grid-column-end: 4;
     grid-row-start: 2;
     grid-row-end: 4;
-    color: aliceblue;
-    font-family: optima, sans-serif;
+    color: #874444;
+    font-family: 'Macondo', cursive;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -13,14 +15,16 @@
 }
 
 .card-header{
-    background-image: linear-gradient(to bottom right, lightgreen, green); 
-    box-shadow: 5px 2px 10px black;
+    background-color:#149700;
+    color:#85cb4f; 
+    box-shadow: 5px 2px 10px #233938;
 }
 .no-board-selected {
-    background-image: linear-gradient(to bottom right, lightgreen, green); 
-    box-shadow: 5px 2px 10px black;
-    height: 200px;
-    width: 200px;
+    background-color: #fbefe0;
+    box-shadow: 5px 2px 10px #233938;
+    height: 150px;
+    width: 150px;
+    color: red;
 }
 .CardList-UL{
     display: flex;
