@@ -4,13 +4,16 @@ import PropTypes from 'prop-types';
 
 const Card = ({message, likes, id, addLikeCallback, removeCardCallback}) => {
     return (
-        <div className='card'>
-            <h3 className='message'>{message}</h3>
-            <section className='card-buttons'>
-                <div className='add-like-button' onClick={()=>addLikeCallback(id)}>{likes} 🍄</div>
-                <div className='remove-card-button' onClick={()=>removeCardCallback(id)}>✂️</div>
-            </section>
-        </div>
+        <section className='CardContainer'>
+            <div className='card'>
+                <h3 className='message'>{message}</h3>
+                <section className='CardIcons'>
+                    <div className='LikeCount' onClick={()=>addLikeCallback(id)}>{likes}</div> 
+                    <div className='add-likes-button'>🍄</div>
+                    <div className='remove-card-button' onClick={()=>removeCardCallback(id)}>✂️</div>
+                </section>
+            </div>
+        </section>
     )
 } 
 

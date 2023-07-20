@@ -4,10 +4,12 @@ import PropTypes from 'prop-types';
 
 const Board = ({ id, owner, title, changeBoardCallback }) => {
     return (
-        <div className='Board' onClick={()=>changeBoardCallback(id)}>
-            <div className='Title'>{title}</div>
-            <div className='Owner'>{owner}</div>
-        </div>
+        <section className='BoardOuterContainer'>
+            <div className='Board' onClick={()=>changeBoardCallback(id)}>
+                <div className='Title'>{title}</div>
+                <div className='Owner'>{owner}</div>
+            </div>
+        </section>
     )
 } 
 

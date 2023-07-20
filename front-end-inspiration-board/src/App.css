@@ -20,11 +20,11 @@
   justify-content: center;
   display: grid;
   width: 90vw;
-  height: 90vh;
+  height: 98vh;
   grid-template-columns: 33% 33% 33%;
   grid-template-rows: 1/6 1/6 1/6 1/6 1/6 1/6;
-  row-gap: 1em;
-  column-gap: 1em;
+  row-gap: 5px;
+  column-gap:2px;
   margin-left: 5%;
 }
 
