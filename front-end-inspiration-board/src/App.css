@@ -6,10 +6,12 @@
   margin: 0px; 
   padding: 0px;
   /* background: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDN8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=800&q=60'); */
-  /* background: url('https://images.unsplash.com/photo-1651282462814-084f1039ea8d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1476&q=80'); */
+  background: url('https://images.unsplash.com/photo-1651282462814-084f1039ea8d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1476&q=80');
   /* background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80'); */
   /* background: url('https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80'); */
-  background: url('https://images.unsplash.com/photo-1473579935071-e01936af3039?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80');
+  /* background: url('https://images.unsplash.com/photo-1473579935071-e01936af3039?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80'); */
+  /* background: url('https://images.unsplash.com/photo-1448375240586-882707db888b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80'); */
+  /* background: url('https://images.unsplash.com/photo-1440847899694-90043f91c7f9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1563&q=80'); */
   background-size: cover;
 }
 
@@ -32,12 +34,12 @@
   grid-column-end: 4;
   font-family: 'Macondo', cursive;
   font-size: 70px;
-  color: #2596be;
-  text-shadow: 5px 5px 0px rgba(0, 0, 0, 0.2), 4px 4px 8px rgba(0,0,0,0.2);
+  color: #94cfd5;
+  text-shadow: 5px 5px 0px #3194cd, 4px 4px 8px #1946a1;
   margin:5px;
   padding:5px;
 }
 
 .Footer{
-  color:white;
+  color: #fbaa22;
 }
