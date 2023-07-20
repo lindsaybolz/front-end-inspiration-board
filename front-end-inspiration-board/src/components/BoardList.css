@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Macondo&display=swap');
+
 .BoardList{
-    color: aliceblue;
-    font-family: optima, sans-serif;
+    color:#1946a1;
+    font-family: 'Macondo', cursive;
     grid-column-start: 1;
     grid-column-end: 4;
     grid-row-start: 4;
@@ -9,11 +11,14 @@
     justify-content: space-around;
     flex-wrap: wrap;
     overflow: scroll;
+    box-shadow: 5px 2px 10px #c3a99b;
 }
 
 ul{
     list-style: none;
     padding-left: 0;
+    box-shadow: 5px 2px 10px #c3a99b;
+
 
 }
 
@@ -22,9 +27,10 @@ ul{
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    box-shadow: 5px 2px 10px #c3a99b;
 }
 
 .BoardHeader{
-    background-image: linear-gradient(to bottom right, lightslategray, grey);
-    box-shadow: 5px 2px 10px black;
+    background-image: linear-gradient(to top, #c3a99b, #874444);
+    box-shadow: 5px 2px 10px #c3a99b;
 }
