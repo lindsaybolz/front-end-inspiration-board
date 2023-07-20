@@ -1,24 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Macondo&display=swap');
+
 .NewBoardFormOuterContainer{  
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 2;
     grid-row-end: 3;
-    margin:2px;
-    padding:2px;
 }
 
 .NewBoardFormInnerContainer{
-    margin:2px;
-}
-
-form{
-    border:5px;
+    /* margin:2px; */
+    /* padding:2px; */
+    /* border:2px;
     border-color: #a2abce;
-    border-style: solid;
-    margin:5px;
-    padding:2px;
-    background-color: #b49c22;
-    opacity:85%;
+    border-style: solid; */
+    background-color: #1a1259;
 }
 
 button{
@@ -27,8 +22,9 @@ button{
     font-size: 20px;
     border-radius: 10px;
     margin:2px;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: 'Macondo', cursive;
     font-weight: bolder;
+    box-shadow: 5px 2px 10px #c3a99b;
 }
 
 button:hover{
@@ -37,55 +33,59 @@ button:hover{
 }
 
 .NewBoardFormButton{
-    background-color:#2c3619;
+    background-color:#883488;
+    color: #fbefe0;
+}
+
+.NewBoardFormButton:hover{
     color: white;
 }
 
-..NewBoardFormButton:hover{
-    background-color:#cf5480;
-    color: white;
-}
-
-h2{
-    color: #d22246;
+.h2s{
+    color: #94cfd5;
     font-size: 35px;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-style: oblique;
+    font-family: 'Macondo', cursive;
     font-weight: bold;
     margin:5px;
     padding:2px;
+
 }
 
 .new_board_fields{
-    background: #382f23;
+    background: #fbaa22;
     margin:1px;
     padding:5px;
+    box-shadow: 5px 2px 10px #c3a99b;
+
 }
 
 label{
-    color:#bc6414;
+    color:#fff078;
     font-size: 25px;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: 'Macondo', cursive;
     font-weight: bolder;
-    font-style: oblique;
+    /* font-style: oblique; */
     margin: 2px;
     padding:5px;
 }
 
 input{
-    background-color:whitesmoke;
+    background-color:#94cfd5;
     margin:2px;
     padding:5px;
+    box-shadow: 5px 2px 10px #c3a99b;
 }
 
 .new_board_submit_button{
     margin:3px;
     margin-top: 8px;
-    background-color:#cf5480;
-    color: white;
+    background-color:#c74097;
+    color: #fbefe0;
+    box-shadow: 5px 2px 10px #c3a99b;
+
 }
 
 .new_board_submit_button:hover{
-    color:white;
+    color:#fbefe0;
     background-color:#2c3619;
 }
