@@ -1,5 +1,6 @@
 .Board{
-    color: #eb849f;
+    background-image: linear-gradient(to top, white,  #fbaa22);
+    color: #503365;
     margin: 1em;
     align-items: center;
     font-weight: bolder;
